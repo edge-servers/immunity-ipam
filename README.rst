@@ -1,24 +1,24 @@
 =============
-openwisp-ipam
+immunity-ipam
 =============
 
-.. image:: https://github.com/openwisp/openwisp-ipam/actions/workflows/ci.yml/badge.svg?branch=master
-  :target: https://github.com/openwisp/openwisp-ipam/actions/workflows/ci.yml?query=workflow%3AOpenWISP+Ipam+CI+Build%22
+.. image:: https://github.com/edge-servers/immunity-ipam/actions/workflows/ci.yml/badge.svg?branch=master
+  :target: https://github.com/edge-servers/immunity-ipam/actions/workflows/ci.yml?query=workflow%3AImmunity+Ipam+CI+Build%22
   :alt: CI Build status
 
-.. image:: https://coveralls.io/repos/openwisp/openwisp-ipam/badge.svg
-  :target: https://coveralls.io/r/openwisp/openwisp-ipam
+.. image:: https://coveralls.io/repos/immunity/immunity-ipam/badge.svg
+  :target: https://coveralls.io/r/immunity/immunity-ipam
   :alt: Coverage
 
-.. image:: https://img.shields.io/pypi/v/openwisp-ipam
-  :target: https://pypi.org/project/openwisp-ipam
+.. image:: https://img.shields.io/pypi/v/immunity-ipam
+  :target: https://pypi.org/project/immunity-ipam
   :alt: PyPI
 
-.. image:: https://img.shields.io/librariesio/release/github/openwisp/openwisp-ipam
-  :target: https://libraries.io/github/openwisp/openwisp-ipam#dependencies
+.. image:: https://img.shields.io/librariesio/release/github/immunity/immunity-ipam
+  :target: https://libraries.io/github/immunity/immunity-ipam#dependencies
   :alt: Dependency monitoring
 
-.. image:: https://github.com/openwisp/openwisp-ipam/raw/docs/docs/subnet_demo.gif
+.. image:: https://github.com/edge-servers/immunity-ipam/raw/docs/docs/subnet_demo.gif
   :alt: Feature Highlights
 
 .. contents:: **Table of Contents**:
@@ -41,8 +41,8 @@ Project Goals
 *************
 
 * provide basic features of IP Address management as a reusable django app
-* integrate this module in the rest of the OpenWISP ecosystem
-* allow standalone usage (without the rest of OpenWISP)
+* integrate this module in the rest of the Immunity ecosystem
+* allow standalone usage (without the rest of Immunity)
 * provide ways to extended the core features in order to create derivatives
 
 Dependencies
@@ -51,7 +51,7 @@ Dependencies
 * Python 3.8 or higher
 * Django 3.2 or higher (except 4.0)
 * Django REST Framework (for the REST API)
-* openwisp-users
+* immunity-users
 * swapper
 
 Install stable version
@@ -59,7 +59,7 @@ Install stable version
 
 .. code-block:: shell
 
-    pip install openwisp-ipam
+    pip install immunity-ipam
 
 Install development version
 ***************************
@@ -68,23 +68,23 @@ Install tarball:
 
 .. code-block:: shell
 
-    pip install https://github.com/openwisp/openwisp-ipam/tarball/master
+    pip install https://github.com/edge-servers/immunity-ipam/tarball/master
 
 Alternatively you can install via pip using git:
 
 .. code-block:: shell
 
-    pip install -e git+git://github.com/openwisp/openwisp-ipam#egg=openwisp-ipam
+    pip install -e git+git://github.com/immunity/immunity-ipam#egg=immunity-ipam
 
 Installation for development
 ****************************
 
-Install ``openwisp-ipam`` for development using following commands:
+Install ``immunity-ipam`` for development using following commands:
 
 .. code-block:: shell
 
-    git clone https://github.com/openwisp/openwisp-ipam.git
-    cd openwisp-ipam
+    git clone https://github.com/edge-servers/immunity-ipam.git
+    cd immunity-ipam
     pip install -e .
     pip install -r requirements-test.txt
 
@@ -121,9 +121,9 @@ Then run the test suite:
 Visual Display of subnets
 *************************
 
-openwisp-ipam provides a graphical representation of a subnet which shows the available free space under any subnet.
+immunity-ipam provides a graphical representation of a subnet which shows the available free space under any subnet.
 
-.. image:: https://raw.githubusercontent.com/openwisp/openwisp-ipam/docs/docs/visual-display.png
+.. image:: https://raw.githubusercontent.com/immunity/immunity-ipam/docs/docs/visual-display.png
 
 REST API
 ********
@@ -131,14 +131,14 @@ REST API
 Live documentation
 ==================
 
-.. image:: https://github.com/openwisp/openwisp-ipam/raw/docs/docs/api-docs.png
+.. image:: https://github.com/edge-servers/immunity-ipam/raw/docs/docs/api-docs.png
 
 A general live API documentation (following the OpenAPI specification) is available at ``/api/v1/docs/``.
 
 Browsable web interface
 =======================
 
-.. image:: https://github.com/openwisp/openwisp-ipam/raw/docs/docs/api-ui.png
+.. image:: https://github.com/edge-servers/immunity-ipam/raw/docs/docs/api-ui.png
 
 Additionally, opening any of the endpoints `listed below <#list-of-endpoints>`_
 directly in the browser will show the `browsable API interface of Django-REST-Framework
@@ -148,8 +148,8 @@ which makes it even easier to find out the details of each endpoint.
 Authentication
 ==============
 
-See openwisp-users: `authenticating with the user token
-<https://github.com/openwisp/openwisp-users#authenticating-with-the-user-token>`_.
+See immunity-users: `authenticating with the user token
+<https://github.com/edge-servers/immunity-users#authenticating-with-the-user-token>`_.
 
 When browsing the API via the `Live documentation <#live-documentation>`_
 or the `Browsable web page <#browsable-web-interface>`_, you can also use
@@ -193,7 +193,7 @@ The rate descriptions used in ``DEFAULT_THROTTLE_RATES`` may include
 Get Next Available IP
 =====================
 
-A model method to fetch the next available IP address under a specific subnet. This method can also be accessed via a REST API: `openwisp_ipam/base/models.py <https://github.com/openwisp/openwisp-ipam/tree/master/tests/openwisp2/openwisp_ipam/base/models.py#L80>`_
+A model method to fetch the next available IP address under a specific subnet. This method can also be accessed via a REST API: `immunity_ipam/base/models.py <https://github.com/edge-servers/immunity-ipam/tree/master/tests/immunity2/immunity_ipam/base/models.py#L80>`_
 
 GET
 ---
@@ -407,7 +407,7 @@ POST
 Exporting and Importing Subnet
 ==============================
 
-One can easily import and export `Subnet` data and it's Ip Addresses using `openwisp-ipam`.
+One can easily import and export `Subnet` data and it's Ip Addresses using `immunity-ipam`.
 This works for both IPv4 and IPv6 types of networks.
 
 Exporting
@@ -429,7 +429,7 @@ From admin interface
 
 Data can be exported from the admin interface by just clicking on the export button on the subnet's admin change view.
 
-.. image:: https://raw.githubusercontent.com/openwisp/openwisp-ipam/docs/docs/export.png
+.. image:: https://raw.githubusercontent.com/immunity/immunity-ipam/docs/docs/export.png
 
 Importing
 ---------
@@ -451,7 +451,7 @@ From admin interface
 
 Data can be imported from the admin interface by just clicking on the import button on the subnet view.
 
-.. image:: https://raw.githubusercontent.com/openwisp/openwisp-ipam/docs/docs/import.png
+.. image:: https://raw.githubusercontent.com/immunity/immunity-ipam/docs/docs/import.png
 
 CSV file format
 ===============
@@ -477,9 +477,9 @@ The ``settings.py`` of your project should contain the following:
 .. code-block:: python
 
     INSTALLED_APPS = [
-        # openwisp2 modules
-        'openwisp_users',
-        'openwisp_ipam',
+        # immunity2 modules
+        'immunity_users',
+        'immunity_ipam',
         # admin
         'admin_auto_filters',
         'django.contrib.admin',
@@ -488,7 +488,7 @@ The ``settings.py`` of your project should contain the following:
         'drf_yasg',
     ]
 
-    AUTH_USER_MODEL = 'openwisp_users.User'
+    AUTH_USER_MODEL = 'immunity_users.User'
 
 Add the URLs to your main ``urls.py``:
 
@@ -496,15 +496,15 @@ Add the URLs to your main ``urls.py``:
 
     from django.contrib import admin
     from django.urls import include, path
-    from openwisp_users.api.urls import get_api_urls as get_users_api_urls
+    from immunity_users.api.urls import get_api_urls as get_users_api_urls
 
     urlpatterns = [
         # admin URLs
         path('admin/', admin.site.urls),
         # IPAM API
-        path('', include('openwisp_ipam.urls')),
+        path('', include('immunity_ipam.urls')),
         # OpenAPI docs
-        path('api/v1/', include('openwisp_utils.api.urls')),
+        path('api/v1/', include('immunity_utils.api.urls')),
         # Bearer Authentication API URL
         path('api/v1/', include((get_users_api_urls(), 'users'), namespace='users')),
     ]
@@ -516,27 +516,27 @@ Then run:
 
     ./manage.py migrate
 
-Extending openwisp-ipam
+Extending immunity-ipam
 ***********************
 
-One of the core values of the OpenWISP project is `Software Reusability <http://openwisp.io/docs/general/values.html#software-reusability-means-long-term-sustainability>`_,
-for this reason *openwisp-ipam* provides a set of base classes
+One of the core values of the Immunity project is `Software Reusability <http://immunity.io/docs/general/values.html#software-reusability-means-long-term-sustainability>`_,
+for this reason *immunity-ipam* provides a set of base classes
 which can be imported, extended and reused to create derivative apps.
 
-In order to implement your custom version of *openwisp-ipam*,
+In order to implement your custom version of *immunity-ipam*,
 you need to perform the steps described in this section.
 
-When in doubt, the code in the `test project <https://github.com/openwisp/openwisp-ipam/tree/master/tests/openwisp2/>`_ and
-the `sample app <https://github.com/openwisp/openwisp-ipam/tree/master/tests/openwisp2/sample_ipam/>`_
+When in doubt, the code in the `test project <https://github.com/edge-servers/immunity-ipam/tree/master/tests/immunity2/>`_ and
+the `sample app <https://github.com/edge-servers/immunity-ipam/tree/master/tests/immunity2/sample_ipam/>`_
 will serve you as source of truth:
 just replicate and adapt that code to get a basic derivative of
-*openwisp-ipam* working.
+*immunity-ipam* working.
 
 If you want to add new users fields, please follow the `tutorial to extend the
-openwisp-users <https://github.com/openwisp/openwisp-users/#extend-openwisp-users>`_.
-As an example, we have extended *openwisp-users* to *sample_users* app and
+immunity-users <https://github.com/edge-servers/immunity-users/#extend-immunity-users>`_.
+As an example, we have extended *immunity-users* to *sample_users* app and
 added a field ``social_security_number`` in the `sample_users/models.py
-<https://github.com/openwisp/openwisp-ipam/blob/master/tests/openwisp2/sample_users/models.py>`_.
+<https://github.com/edge-servers/immunity-ipam/blob/master/tests/immunity2/sample_users/models.py>`_.
 
 **Premise**: if you plan on using a customized version of this module,
 we suggest to start with it since the beginning, because migrating your data
@@ -546,7 +546,7 @@ from the default module to your extended version may be time consuming.
 ================================
 
 The first thing you need to do is to create a new django app which will
-contain your custom version of *openwisp-ipam*.
+contain your custom version of *immunity-ipam*.
 
 A django app is nothing more than a
 `python package <https://docs.python.org/3/tutorial/modules.html#packages>`_
@@ -560,20 +560,20 @@ which is available in your `PYTHON_PATH <https://docs.python.org/3/using/cmdline
 so that you can then import the result into your project.
 
 Now you need to add ``myipam`` to ``INSTALLED_APPS`` in your ``settings.py``,
-ensuring also that ``openwisp_ipam`` has been removed:
+ensuring also that ``immunity_ipam`` has been removed:
 
 .. code-block:: python
 
     INSTALLED_APPS = [
         # ... other apps ...
-        'openwisp_utils.admin_theme',
+        'immunity_utils.admin_theme',
         # all-auth
         'django.contrib.sites',
         'allauth',
         'allauth.account',
         'allauth.socialaccount',
-        # openwisp2 modules
-        'openwisp_users',
+        # immunity2 modules
+        'immunity_users',
         # 'myipam',   <-- replace without your app-name here
         # admin
         'admin_auto_filters',
@@ -587,12 +587,12 @@ ensuring also that ``openwisp_ipam`` has been removed:
 For more information about how to work with django projects and django apps,
 please refer to the `django documentation <https://docs.djangoproject.com/en/dev/intro/tutorial01/>`_.
 
-2. Install ``openwisp-ipam``
+2. Install ``immunity-ipam``
 ============================
 
-Install (and add to the requirement of your project) openwisp-ipam::
+Install (and add to the requirement of your project) immunity-ipam::
 
-    pip install openwisp-ipam
+    pip install immunity-ipam
 
 3. Add ``EXTENDED_APPS``
 ========================
@@ -601,12 +601,12 @@ Add the following to your ``settings.py``:
 
 .. code-block:: python
 
-    EXTENDED_APPS = ('openwisp_ipam',)
+    EXTENDED_APPS = ('immunity_ipam',)
 
-4. Add ``openwisp_utils.staticfiles.DependencyFinder``
+4. Add ``immunity_utils.staticfiles.DependencyFinder``
 ======================================================
 
-Add ``openwisp_utils.staticfiles.DependencyFinder`` to
+Add ``immunity_utils.staticfiles.DependencyFinder`` to
 ``STATICFILES_FINDERS`` in your ``settings.py``:
 
 .. code-block:: python
@@ -614,13 +614,13 @@ Add ``openwisp_utils.staticfiles.DependencyFinder`` to
     STATICFILES_FINDERS = [
         'django.contrib.staticfiles.finders.FileSystemFinder',
         'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-        'openwisp_utils.staticfiles.DependencyFinder',
+        'immunity_utils.staticfiles.DependencyFinder',
     ]
 
-5. Add ``openwisp_utils.loaders.DependencyLoader``
+5. Add ``immunity_utils.loaders.DependencyLoader``
 ==================================================
 
-Add ``openwisp_utils.loaders.DependencyLoader`` to ``TEMPLATES``
+Add ``immunity_utils.loaders.DependencyLoader`` to ``TEMPLATES``
 in your ``settings.py``, but ensure it comes before
 ``django.template.loaders.app_directories.Loader``:
 
@@ -632,7 +632,7 @@ in your ``settings.py``, but ensure it comes before
             'OPTIONS': {
                 'loaders': [
                     'django.template.loaders.filesystem.Loader',
-                    'openwisp_utils.loaders.DependencyLoader',
+                    'immunity_utils.loaders.DependencyLoader',
                     'django.template.loaders.app_directories.Loader',
                 ],
                 'context_processors': [
@@ -650,8 +650,8 @@ in your ``settings.py``, but ensure it comes before
 
 Please refer to the following files in the sample app of the test project:
 
-- `sample_ipam/__init__.py <https://github.com/openwisp/openwisp-ipam/tree/master/tests/openwisp2/sample_ipam/__init__.py>`_.
-- `sample_ipam/apps.py <https://github.com/openwisp/openwisp-ipam/tree/master/tests/openwisp2/sample_ipam/apps.py>`_.
+- `sample_ipam/__init__.py <https://github.com/edge-servers/immunity-ipam/tree/master/tests/immunity2/sample_ipam/__init__.py>`_.
+- `sample_ipam/apps.py <https://github.com/edge-servers/immunity-ipam/tree/master/tests/immunity2/sample_ipam/apps.py>`_.
 
 You have to replicate and adapt that code in your project.
 
@@ -662,7 +662,7 @@ the `"Applications" section in the django documentation <https://docs.djangoproj
 ============================
 
 For the purpose of showing an example, we added a simple "details" field to the
-`models of the sample app in the test project <https://github.com/openwisp/openwisp-ipam/tree/master/tests/openwisp2/sample_ipam/models.py>`_.
+`models of the sample app in the test project <https://github.com/edge-servers/immunity-ipam/tree/master/tests/immunity2/sample_ipam/models.py>`_.
 
 You can add fields in a similar way in your ``models.py`` file.
 
@@ -697,7 +697,7 @@ For more information, refer to the
 10. Create the admin
 ====================
 
-Refer to the `admin.py file of the sample app <https://github.com/openwisp/openwisp-ipam/tree/master/tests/openwisp2/sample_ipam/admin.py>`_.
+Refer to the `admin.py file of the sample app <https://github.com/edge-servers/immunity-ipam/tree/master/tests/immunity2/sample_ipam/admin.py>`_.
 
 To introduce changes to the admin, you can do it in two main ways which are described below.
 
@@ -713,7 +713,7 @@ For example:
 
 .. code-block:: python
 
-    from openwisp_ipam.admin import IpAddressAdmin, SubnetAdmin
+    from immunity_ipam.admin import IpAddressAdmin, SubnetAdmin
 
     SubnetAdmin.app_label = 'sample_ipam'
 
@@ -727,14 +727,14 @@ monkey patching, you can proceed as follows:
 .. code-block:: python
 
     from django.contrib import admin
-    from openwisp_ipam.admin import (
+    from immunity_ipam.admin import (
         IpAddressAdmin as BaseIpAddressAdmin,
         SubnetAdmin as BaseSubnetAdmin,
     )
     from swapper import load_model
 
-    IpAddress = load_model('openwisp_ipam', 'IpAddress')
-    Subnet = load_model('openwisp_ipam', 'Subnet')
+    IpAddress = load_model('immunity_ipam', 'IpAddress')
+    Subnet = load_model('immunity_ipam', 'Subnet')
 
     admin.site.unregister(IpAddress)
     admin.site.unregister(Subnet)
@@ -756,13 +756,13 @@ Substitute ``myipam`` with the name you chose in step 1.
 .. code-block:: python
 
     from .sample_ipam import views as api_views
-    from openwisp_ipam.urls import get_urls
+    from immunity_ipam.urls import get_urls
 
     urlpatterns = [
         # ... other urls in your project ...
-        # openwisp-ipam urls
+        # immunity-ipam urls
         # path('', include(get_urls(api_views))) <-- Use only when changing API views (dicussed below)
-        path('', include('openwisp_ipam.urls')),
+        path('', include('immunity_ipam.urls')),
     ]
 
 For more information about URL configuration in django, please refer to the
@@ -773,12 +773,12 @@ For more information about URL configuration in django, please refer to the
 
 When developing a custom application based on this module, it's a good
 idea to import and run the base tests too, so that you can be sure the changes
-you're introducing are not breaking some of the existing features of *openwisp-ipam*.
+you're introducing are not breaking some of the existing features of *immunity-ipam*.
 
 In case you need to add breaking changes, you can overwrite the tests defined
 in the base classes to test your own behavior.
 
-See the `tests of the sample app <https://github.com/openwisp/openwisp-ipam/tree/master/tests/openwisp2/sample_ipam/tests.py>`_
+See the `tests of the sample app <https://github.com/edge-servers/immunity-ipam/tree/master/tests/immunity2/sample_ipam/tests.py>`_
 to find out how to do this.
 
 You can then run tests with::
@@ -800,18 +800,18 @@ The following steps are not required and are intended for more advanced customiz
 --------------------------
 
 The API view classes can be extended into other django applications as well. Note
-that it is not required for extending openwisp-ipam to your app and this change
+that it is not required for extending immunity-ipam to your app and this change
 is required only if you plan to make changes to the API views.
 
-Create a view file as done in `views.py <https://github.com/openwisp/openwisp-ipam/tree/master/tests/openwisp2/sample_ipam/views.py>`_.
+Create a view file as done in `views.py <https://github.com/edge-servers/immunity-ipam/tree/master/tests/immunity2/sample_ipam/views.py>`_.
 
 For more information about django views, please refer to the `views section in the django documentation <https://docs.djangoproject.com/en/dev/topics/http/views/>`_.
 
 Contributing
 ************
 
-Please refer to the `OpenWISP contributing guidelines <http://openwisp.io/docs/developer/contributing.html>`_.
+Please refer to the `Immunity contributing guidelines <http://immunity.io/docs/developer/contributing.html>`_.
 
-`Support channels <http://openwisp.org/support.html>`_ |
-`Issue Tracker <https://github.com/openwisp/openwisp-ipam/issues>`_ |
-`License <https://github.com/openwisp/openwisp-ipam/blob/master/LICENSE>`_
+`Support channels <http://immunity.org/support.html>`_ |
+`Issue Tracker <https://github.com/edge-servers/immunity-ipam/issues>`_ |
+`License <https://github.com/edge-servers/immunity-ipam/blob/master/LICENSE>`_

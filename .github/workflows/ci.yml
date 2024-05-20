@@ -1,5 +1,5 @@
 ---
-name: OpenWISP Ipam CI Build
+name: Immunity Ipam CI Build
 
 on:
   push:
@@ -41,7 +41,7 @@ jobs:
           pip install -U pip wheel setuptools
           pip install -U -r requirements-test.txt
 
-      - name: Install openwisp-ipam
+      - name: Install immunity-ipam
         run: |
           pip install -U -e .
           pip install ${{ matrix.django-version }}

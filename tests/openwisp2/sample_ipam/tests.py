@@ -1,9 +1,9 @@
-from openwisp_ipam.tests.test_admin import TestAdmin as BaseTestAdmin
-from openwisp_ipam.tests.test_api import TestApi as BaseTestApi
-from openwisp_ipam.tests.test_commands import TestCommands as BaseTestCommands
-from openwisp_ipam.tests.test_forms import TestForms as BaseTestForms
-from openwisp_ipam.tests.test_models import TestModels as BaseTestModels
-from openwisp_ipam.tests.test_multitenant import (
+from immunity_ipam.tests.test_admin import TestAdmin as BaseTestAdmin
+from immunity_ipam.tests.test_api import TestApi as BaseTestApi
+from immunity_ipam.tests.test_commands import TestCommands as BaseTestCommands
+from immunity_ipam.tests.test_forms import TestForms as BaseTestForms
+from immunity_ipam.tests.test_models import TestModels as BaseTestModels
+from immunity_ipam.tests.test_multitenant import (
     TestMultitenantAdmin as BaseTestMultitenantAdmin,
 )
 

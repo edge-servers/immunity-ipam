@@ -16,7 +16,7 @@ Features
 - Added support for `django-reversion
   <https://github.com/etianen/django-reversion>`_
 - Created default permissions for the default permission groups
-  defined by OpenWISP Users
+  defined by Immunity Users
 - Added menu items
 - Added throttling of API requests
 - Implemented multi-tenancy in REST API
@@ -28,7 +28,7 @@ Backward incompatible changes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Changed API endpoints from ``/api/v1/*`` to ``/api/v1/ipam/*``
-  for consistency with the other openwisp modules
+  for consistency with the other immunity modules
 
 Dependencies
 ^^^^^^^^^^^^
@@ -49,9 +49,9 @@ Other changes
 Bugfixes
 ~~~~~~~~
 
-- Avoid shipping openwisp-users URLs in openwisp-ipam app
+- Avoid shipping immunity-users URLs in immunity-ipam app
 - Fixed ``IndexError`` exception in REST API
-- Fixed extensibility issues with openwisp-users and added tests
+- Fixed extensibility issues with immunity-users and added tests
   for this in the sample app
 - Fix overlapping shared/non-shared subnet validation
 - Excluded child subnets from overlapping validation
@@ -86,14 +86,14 @@ Bugfixes
 - Fixed master subnet multitenant validation
 - Fixed master subnet multitenant validation
 - Fixed admin multitenancy issue in hierarchical view
-- Fixed integration tests with openwisp-users 0.4.1
+- Fixed integration tests with immunity-users 0.4.1
 - Fixed wrong API URL for ``list_create_ip_address``
 - Add MANIFEST to fix missing admin templates from python package
 
 Version 0.1.1 [2020-09-03]
 --------------------------
 
-- Updated dependencies (django 3.1, openwisp-users 0.4.0, openwisp-utils 0.6.0)
+- Updated dependencies (django 3.1, immunity-users 0.4.0, immunity-utils 0.6.0)
 
 Version 0.1.0 [2020-05-28]
 --------------------------

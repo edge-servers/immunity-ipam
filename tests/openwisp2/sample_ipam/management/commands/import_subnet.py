@@ -1,6 +1,6 @@
 import swapper
 
-from openwisp_ipam.management.commands import BaseImportSubnetCommand
+from immunity_ipam.management.commands import BaseImportSubnetCommand
 
 
 class Command(BaseImportSubnetCommand):

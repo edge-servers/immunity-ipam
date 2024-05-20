@@ -2,7 +2,7 @@ import os
 
 from setuptools import find_packages, setup
 
-from openwisp_ipam import get_version
+from immunity_ipam import get_version
 
 with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
     README = readme.read()
@@ -21,17 +21,17 @@ def get_install_requires():
 
 
 setup(
-    name='openwisp-ipam',
+    name='immunity-ipam',
     version=get_version(),
     license='BSD-3-Clause',
-    author='OpenWISP',
-    author_email='support@openwisp.io',
-    description='IP address space administration module of OpenWISP.',
+    author='Immunity',
+    author_email='support@immunity.io',
+    description='IP address space administration module of Immunity.',
     long_description=README,
-    url='https://github.com/openwisp/openwisp-ipam',
-    download_url='https://github.com/openwisp/openwisp-ipam/releases',
+    url='https://github.com/edge-servers/immunity-ipam',
+    download_url='https://github.com/edge-servers/immunity-ipam/releases',
     platforms=['Platform Independent'],
-    keywords=['django', 'freeradius', 'networking', 'openwisp'],
+    keywords=['django', 'freeradius', 'networking', 'immunity'],
     packages=find_packages(exclude=['tests*', 'docs*']),
     include_package_data=True,
     zip_safe=False,

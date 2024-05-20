@@ -1,1 +1,1 @@
-openwisp-utils[qa] @ https://github.com/openwisp/openwisp-utils/tarball/master
+immunity-utils[qa] @ https://github.com/edge-servers/immunity-utils/tarball/master

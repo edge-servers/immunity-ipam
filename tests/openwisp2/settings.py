@@ -13,7 +13,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'openwisp_users.accounts',
+    'immunity_users.accounts',
     # all-auth
     'django.contrib.sites',
     'allauth',
@@ -21,11 +21,11 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     # Other dependencies
     'reversion',
-    # openwisp2 modules
-    'openwisp_users',
-    'openwisp_ipam',
+    # immunity2 modules
+    'immunity_users',
+    'immunity_ipam',
     # admin
-    'openwisp_utils.admin_theme',
+    'immunity_utils.admin_theme',
     'django.contrib.admin',
     'admin_auto_filters',
     # rest framework
@@ -37,8 +37,8 @@ INSTALLED_APPS = [
 ]
 
 SITE_ID = 1
-ROOT_URLCONF = 'openwisp2.urls'
-AUTH_USER_MODEL = 'openwisp_users.User'
+ROOT_URLCONF = 'immunity2.urls'
+AUTH_USER_MODEL = 'immunity_users.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -53,7 +53,7 @@ MIDDLEWARE = [
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'openwisp_utils.staticfiles.DependencyFinder',
+    'immunity_utils.staticfiles.DependencyFinder',
 ]
 
 TEMPLATES = [
@@ -63,7 +63,7 @@ TEMPLATES = [
         'OPTIONS': {
             'loaders': [
                 'django.template.loaders.filesystem.Loader',
-                'openwisp_utils.loaders.DependencyLoader',
+                'immunity_utils.loaders.DependencyLoader',
                 'django.template.loaders.app_directories.Loader',
             ],
             'context_processors': [
@@ -71,7 +71,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'openwisp_utils.admin_theme.context_processor.menu_groups',
+                'immunity_utils.admin_theme.context_processor.menu_groups',
             ],
         },
     },
@@ -98,14 +98,14 @@ if TESTING:
     CELERY_TASK_EAGER_PROPAGATES = True
 
 if os.environ.get('SAMPLE_APP', False):
-    ipam_index = INSTALLED_APPS.index('openwisp_ipam')
-    INSTALLED_APPS.remove('openwisp_ipam')
-    INSTALLED_APPS.insert(ipam_index, 'openwisp2.sample_ipam')
-    # Replace Openwisp_Users
-    users_index = INSTALLED_APPS.index('openwisp_users')
-    INSTALLED_APPS.remove('openwisp_users')
-    INSTALLED_APPS.insert(users_index, 'openwisp2.sample_users')
-    EXTENDED_APPS = ['openwisp_ipam', 'openwisp_users']
+    ipam_index = INSTALLED_APPS.index('immunity_ipam')
+    INSTALLED_APPS.remove('immunity_ipam')
+    INSTALLED_APPS.insert(ipam_index, 'immunity2.sample_ipam')
+    # Replace Immunity_Users
+    users_index = INSTALLED_APPS.index('immunity_users')
+    INSTALLED_APPS.remove('immunity_users')
+    INSTALLED_APPS.insert(users_index, 'immunity2.sample_users')
+    EXTENDED_APPS = ['immunity_ipam', 'immunity_users']
     OPENWISP_IPAM_IPADDRESS_MODEL = 'sample_ipam.IpAddress'
     OPENWISP_IPAM_SUBNET_MODEL = 'sample_ipam.Subnet'
     # Swapper
@@ -117,6 +117,6 @@ if os.environ.get('SAMPLE_APP', False):
 
 # local settings must be imported before test runner otherwise they'll be ignored
 try:
-    from openwisp2.local_settings import *
+    from immunity2.local_settings import *
 except ImportError:
     pass

@@ -7,7 +7,7 @@ import django.contrib.auth.validators
 import django.core.validators
 import django.db.models.deletion
 import django.utils.timezone
-import openwisp_users.base.models
+import immunity_users.base.models
 import organizations.base
 import organizations.fields
 import phonenumber_field.modelfields
@@ -202,7 +202,7 @@ class Migration(migrations.Migration):
                 'index_together': {('id', 'email')},
             },
             managers=[
-                ('objects', openwisp_users.base.models.UserManager()),
+                ('objects', immunity_users.base.models.UserManager()),
             ],
         ),
         migrations.CreateModel(
@@ -272,7 +272,7 @@ class Migration(migrations.Migration):
                 'indexes': [],
                 'constraints': [],
             },
-            bases=(openwisp_users.base.models.BaseGroup, 'auth.group'),
+            bases=(immunity_users.base.models.BaseGroup, 'auth.group'),
             managers=[
                 ('objects', django.contrib.auth.models.GroupManager()),
             ],

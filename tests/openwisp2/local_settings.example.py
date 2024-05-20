@@ -4,7 +4,7 @@
 # DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.contrib.gis.db.backends.spatialite',
-#        'NAME': 'openwisp-firmware-upgrader.db',
+#        'NAME': 'immunity-firmware-upgrader.db',
 #        'USER': '',
 #        'PASSWORD': '',
 #        'HOST': '',

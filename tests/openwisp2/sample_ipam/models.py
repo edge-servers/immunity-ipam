@@ -1,6 +1,6 @@
 from django.db import models
 
-from openwisp_ipam.base.models import AbstractIpAddress, AbstractSubnet
+from immunity_ipam.base.models import AbstractIpAddress, AbstractSubnet
 
 
 class DetailsModel(models.Model):

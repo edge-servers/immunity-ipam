@@ -1,9 +1,9 @@
-from openwisp_users.tests.test_admin import (
+from immunity_users.tests.test_admin import (
     TestBasicUsersIntegration as BaseTestBasicUsersIntegration,
     TestMultitenantAdmin as BaseTestMultitenantAdmin,
     TestUsersAdmin as BaseTestUsersAdmin,
 )
-from openwisp_users.tests.test_models import TestUsers as BaseTestUsers
+from immunity_users.tests.test_models import TestUsers as BaseTestUsers
 
 additional_fields = [
     ('social_security_number', '123-45-6789'),

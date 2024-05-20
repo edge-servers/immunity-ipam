@@ -5,6 +5,6 @@ omit =
     /*/__init__.py
     /setup.py
     /*/migrations/*
-source = openwisp_ipam
+source = immunity_ipam
 parallel = true
 concurrency = multiprocessing

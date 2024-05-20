@@ -5,7 +5,7 @@ to modify the API views as well.
 
 import swapper
 
-from openwisp_ipam.api.views import (
+from immunity_ipam.api.views import (
     AvailableIpView as BaseAvailableIpView,
     ExportSubnetView as BaseExportSubnetView,
     ImportSubnetView as BaseImportSubnetView,
@@ -17,8 +17,8 @@ from openwisp_ipam.api.views import (
     SubnetView as BaseSubnetView,
 )
 
-IpAddress = swapper.load_model('openwisp_ipam', 'IpAddress')
-Subnet = swapper.load_model('openwisp_ipam', 'Subnet')
+IpAddress = swapper.load_model('immunity_ipam', 'IpAddress')
+Subnet = swapper.load_model('immunity_ipam', 'Subnet')
 
 
 class AvailableIpView(BaseAvailableIpView):

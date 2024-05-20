@@ -4,28 +4,28 @@ set -e
 
 echo ''
 echo 'Check JavaScript Linting'
-jslint ./openwisp_ipam/static/openwisp-ipam/js/*.js
+jslint ./immunity_ipam/static/immunity-ipam/js/*.js
 
 echo ''
 echo 'Check CSS Linting'
-stylelint ./openwisp_ipam/static/openwisp-ipam/css/*.css
+stylelint ./immunity_ipam/static/immunity-ipam/css/*.css
 
 echo ''
-echo 'Running checks for openwisp_ipam'
+echo 'Running checks for immunity_ipam'
 
-openwisp-qa-check \
-          --migration-path ./openwisp_ipam/migrations/ \
-          --migration-module openwisp_ipam
+immunity-qa-check \
+          --migration-path ./immunity_ipam/migrations/ \
+          --migration-module immunity_ipam
 
 echo ''
 echo 'Running checks for SAMPLE_APP'
 
-SAMPLE_APP=1 openwisp-qa-check \
+SAMPLE_APP=1 immunity-qa-check \
               --skip-isort \
               --skip-flake8 \
               --skip-checkmigrations \
               --skip-checkendline \
               --skip-checkcommit \
-              --migration-path "./tests/openwisp2/sample_ipam/migrations
-                                ./tests/openwisp2/sample_users/migrations"
+              --migration-path "./tests/immunity2/sample_ipam/migrations
+                                ./tests/immunity2/sample_users/migrations"
 

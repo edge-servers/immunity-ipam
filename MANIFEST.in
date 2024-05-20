@@ -2,7 +2,7 @@ include LICENSE
 include README.rst
 include CHANGES.rst
 include requirements.txt
-recursive-include openwisp_ipam *
+recursive-include immunity_ipam *
 recursive-exclude * *.pyc
 recursive-exclude * *.swp
 recursive-exclude * __pycache__

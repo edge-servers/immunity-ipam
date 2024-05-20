@@ -5,12 +5,12 @@ import uuid
 import django.db.models.deletion
 import django.utils.timezone
 import model_utils.fields
-import openwisp_users.mixins
+import immunity_users.mixins
 import swapper
 from django.conf import settings
 from django.db import migrations, models
 
-import openwisp_ipam.base.fields
+import immunity_ipam.base.fields
 
 
 class Migration(migrations.Migration):
@@ -53,7 +53,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(db_index=True, max_length=100)),
                 (
                     'subnet',
-                    openwisp_ipam.base.fields.NetworkField(
+                    immunity_ipam.base.fields.NetworkField(
                         db_index=True,
                         help_text=(
                             'Subnet in CIDR notation, eg: "10.0.0.0/24" '
@@ -71,20 +71,20 @@ class Migration(migrations.Migration):
                         null=True,
                         on_delete=django.db.models.deletion.CASCADE,
                         related_name='child_subnet_set',
-                        to=swapper.get_model_name('openwisp_ipam', 'Subnet'),
+                        to=swapper.get_model_name('immunity_ipam', 'Subnet'),
                     ),
                 ),
                 (
                     'organization',
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
-                        to=swapper.get_model_name('openwisp_users', 'Organization'),
+                        to=swapper.get_model_name('immunity_users', 'Organization'),
                         verbose_name='organization',
                     ),
                 ),
             ],
             options={'abstract': False},
-            bases=(openwisp_users.mixins.ValidateOrgMixin, models.Model),
+            bases=(immunity_users.mixins.ValidateOrgMixin, models.Model),
         ),
         migrations.CreateModel(
             name='IpAddress',
@@ -121,7 +121,7 @@ class Migration(migrations.Migration):
                     'organization',
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
-                        to=swapper.get_model_name('openwisp_users', 'Organization'),
+                        to=swapper.get_model_name('immunity_users', 'Organization'),
                         verbose_name='organization',
                     ),
                 ),
@@ -129,7 +129,7 @@ class Migration(migrations.Migration):
                     'subnet',
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
-                        to=swapper.get_model_name('openwisp_ipam', 'Subnet'),
+                        to=swapper.get_model_name('immunity_ipam', 'Subnet'),
                     ),
                 ),
             ],
@@ -138,7 +138,7 @@ class Migration(migrations.Migration):
                 'verbose_name': 'IP address',
                 'verbose_name_plural': 'IP addresses',
             },
-            bases=(openwisp_users.mixins.ValidateOrgMixin, models.Model),
+            bases=(immunity_users.mixins.ValidateOrgMixin, models.Model),
         ),
         migrations.AddIndex(
             model_name='subnet',
