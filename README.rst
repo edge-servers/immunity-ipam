@@ -677,8 +677,10 @@ Once you have created the models, add the following to your ``settings.py``:
 .. code-block:: python
 
     # Setting models for swapper module
-    OPENWISP_IPAM_IPADDRESS_MODEL = 'myipam.IpAddress'
-    OPENWISP_IPAM_SUBNET_MODEL = 'myipam.Subnet'
+    IMMUNITY
+_IPAM_IPADDRESS_MODEL = 'myipam.IpAddress'
+    IMMUNITY
+_IPAM_SUBNET_MODEL = 'myipam.Subnet'
 
 Substitute ``myipam`` with the name you chose in step 1.
 

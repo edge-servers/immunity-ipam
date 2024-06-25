@@ -5,7 +5,8 @@ from immunity_utils.utils import default_or_test
 from swapper import get_model_name
 
 
-class OpenWispIpamConfig(ApiAppConfig):
+class Immunity
+IpamConfig(ApiAppConfig):
     name = 'immunity_ipam'
     verbose_name = 'IPAM'
 

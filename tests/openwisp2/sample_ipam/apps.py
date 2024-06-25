@@ -1,9 +1,12 @@
-from immunity_ipam.apps import OpenWispIpamConfig
+from immunity_ipam.apps import Immunity
+IpamConfig
 
 
-class SampleIpamConfig(OpenWispIpamConfig):
+class SampleIpamConfig(Immunity
+IpamConfig):
     name = 'immunity2.sample_ipam'
     label = 'sample_ipam'
 
 
-del OpenWispIpamConfig
+del Immunity
+IpamConfig

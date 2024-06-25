@@ -86,13 +86,16 @@ USE_L10N = True
 USE_TZ = True
 STATIC_URL = '/static/'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-OPENWISP_USERS_AUTH_API = True
+IMMUNITY
+_USERS_AUTH_API = True
 
 CELERY_BROKER_URL = 'memory://'
 
 if TESTING:
-    OPENWISP_ORGANIZATION_USER_ADMIN = True
-    OPENWISP_ORGANIZATION_OWNER_ADMIN = True
+    IMMUNITY
+_ORGANIZATION_USER_ADMIN = True
+    IMMUNITY
+_ORGANIZATION_OWNER_ADMIN = True
 
     CELERY_TASK_ALWAYS_EAGER = True
     CELERY_TASK_EAGER_PROPAGATES = True
@@ -106,14 +109,20 @@ if os.environ.get('SAMPLE_APP', False):
     INSTALLED_APPS.remove('immunity_users')
     INSTALLED_APPS.insert(users_index, 'immunity2.sample_users')
     EXTENDED_APPS = ['immunity_ipam', 'immunity_users']
-    OPENWISP_IPAM_IPADDRESS_MODEL = 'sample_ipam.IpAddress'
-    OPENWISP_IPAM_SUBNET_MODEL = 'sample_ipam.Subnet'
+    IMMUNITY
+_IPAM_IPADDRESS_MODEL = 'sample_ipam.IpAddress'
+    IMMUNITY
+_IPAM_SUBNET_MODEL = 'sample_ipam.Subnet'
     # Swapper
     AUTH_USER_MODEL = 'sample_users.User'
-    OPENWISP_USERS_GROUP_MODEL = 'sample_users.Group'
-    OPENWISP_USERS_ORGANIZATION_MODEL = 'sample_users.Organization'
-    OPENWISP_USERS_ORGANIZATIONUSER_MODEL = 'sample_users.OrganizationUser'
-    OPENWISP_USERS_ORGANIZATIONOWNER_MODEL = 'sample_users.OrganizationOwner'
+    IMMUNITY
+_USERS_GROUP_MODEL = 'sample_users.Group'
+    IMMUNITY
+_USERS_ORGANIZATION_MODEL = 'sample_users.Organization'
+    IMMUNITY
+_USERS_ORGANIZATIONUSER_MODEL = 'sample_users.OrganizationUser'
+    IMMUNITY
+_USERS_ORGANIZATIONOWNER_MODEL = 'sample_users.OrganizationOwner'
 
 # local settings must be imported before test runner otherwise they'll be ignored
 try:
