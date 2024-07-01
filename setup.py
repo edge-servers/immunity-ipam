@@ -27,6 +27,7 @@ setup(
     author='Immunity',
     author_email='support@immunity.io',
     description='IP address space administration module of Immunity.',
+    long_description_content_type='text/markdown',
     long_description=README,
     url='https://github.com/edge-servers/immunity-ipam',
     download_url='https://github.com/edge-servers/immunity-ipam/releases',

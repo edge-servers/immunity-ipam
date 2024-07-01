@@ -1,4 +1,4 @@
-immunity-users @ https://github.com/edge-servers/immunity-users/tarball/master
-immunity-utils[rest] @ https://github.com/edge-servers/immunity-utils/tarball/master
+immunity-users
+immunity-utils[rest]
 django-reversion~=5.0.4
 openpyxl~=3.1.2
